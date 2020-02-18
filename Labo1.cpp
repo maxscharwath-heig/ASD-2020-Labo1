@@ -1,7 +1,7 @@
 //
 //  Labo1.cpp
 //
-//	/* NOMS DES ETUDIANTS ICI */
+//	Anne Sophie Ganguillet, Julien Bard, Maxime Scharwath
 //
 
 #include <stdlib.h>
@@ -145,5 +145,8 @@ int main() {
     //initialisation du générateur aléatoire
     srand (time(NULL));
 
-    //...
+
+
+
+    return EXIT_SUCCESS;
 }
