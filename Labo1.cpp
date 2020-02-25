@@ -4,7 +4,7 @@
 //	/* NOMS DES ETUDIANTS ICI */
 //
 
-#include <stdlib.h>
+#include <cstdlib>
 #include <vector>
 #include <random>
 #include <ctime>
@@ -150,26 +150,33 @@ int main() {
     //initialisation du générateur aléatoire
     srand (time(NULL));
 
-    vector<int> v1(1e5,0);
+    /*vector<int> v1(1e5,0);
     generate(v1.begin(),v1.end(),rand);
 
     int valeur = rand();
 
-    //prendre le moment de départ
+    //prendre le moment de départ*/
     high_resolution_clock::time_point t1 = high_resolution_clock::now();
 
     //exécuter les opérations à chronométrer ici
-    chercherSiContient(v1,valeur);
+    //chercherSiContient(v1,valeur);
 
     //prendre le moment d’arrivée
     high_resolution_clock::time_point t2 = high_resolution_clock::now();
 
     double temps = duration_cast<nanoseconds>( t2 - t1 ).count();
 
-    cout << temps << endl;
-
     /*
+    cout << temps << endl;
+    */
+    //*
+
+    cout << "fonction f :" << endl;
+
     for(int i = 11; i< 20; ++i){
+
+        cout << "f(" << i << ") : ";
+
         t1 = high_resolution_clock::now();
 
         f(i);
@@ -177,10 +184,11 @@ int main() {
         t2 = high_resolution_clock::now();
 
         //calcul du temps, ici en nanosecondes
-        double temps = duration_cast<nanoseconds>( t2 - t1 ).count();
+        temps = duration_cast<nanoseconds>( t2 - t1 ).count();
 
-        cout << i << ':' << temps << endl;
-    }*/
+        cout << temps << " ns" << endl;
+
+    }//*/
 
     return EXIT_SUCCESS;
 }
