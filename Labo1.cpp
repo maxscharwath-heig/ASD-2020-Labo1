@@ -206,8 +206,21 @@ int main() {
         //calcul du temps, ici en nanosecondes
         cout << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << endl;
     }
-    
 
+    //========= FONCTION random2() =========
+
+    cout << "Fonction random2() :" << endl;
+    for (int i = 2; i < 6; ++i) {
+
+        int n = round(pow(10,i));
+        int v_max = rand();
+        cout << "random2(" << n << ") : ";
+        t1 = high_resolution_clock::now();
+        random2(n, v_max);
+        t2 = high_resolution_clock::now();
+        //calcul du temps, ici en nanosecondes
+        cout << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << endl;
+    }
 
 
     return EXIT_SUCCESS;
