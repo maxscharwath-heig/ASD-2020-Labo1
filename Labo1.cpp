@@ -28,12 +28,14 @@ using namespace std;
  */
 size_t chercherPosition(const vector<int> &v, int val) {
     for (size_t i = 0; i < v.size(); ++i) {
-        if (v.at(i) == val)
+        if (v.at(i) == val) {
+            cout << i + 1;
             return i;
+        }
     }
+    cout << v.size();
     return -1;
 }
-
 
 /**
  * 2. Trie un vector.
@@ -150,7 +152,6 @@ int main() {
     //initialisation du générateur aléatoire
     srand(time(NULL));
     high_resolution_clock::time_point t1, t2;
-
 
     //========= FONCTION F() =========
 
