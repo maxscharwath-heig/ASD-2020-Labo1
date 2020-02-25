@@ -26,9 +26,9 @@ using namespace std;
  * @param val valeur à chercher
  * @return la position de la valeur dans le vector si trouvé, -1 sinon
  */
-size_t chercherPosition( const vector<int>& v , int val ) {
-    for(size_t i = 0; i < v.size(); ++i) {
-        if(v.at(i) == val)
+size_t chercherPosition(const vector<int> &v, int val) {
+    for (size_t i = 0; i < v.size(); ++i) {
+        if (v.at(i) == val)
             return i;
     }
     return -1;
@@ -42,14 +42,14 @@ size_t chercherPosition( const vector<int>& v , int val ) {
  *
  * @param v vector à trier
  */
-void trier( vector<int>& v ) {
-    if(v.empty()) return;
+void trier(vector<int> &v) {
+    if (v.empty()) return;
 
-    for(int a : v) {
+    for (int a : v) {
         auto j = v.begin();
         auto k = j++;
-        for(; j != v.end(); k = j++ )
-            if(*k > *j )
+        for (; j != v.end(); k = j++)
+            if (*k > *j)
                 swap(*k, *j);
     }
 }
@@ -65,16 +65,16 @@ void trier( vector<int>& v ) {
  * @param val valeur à chercher
  * Retourne true si la valeur est contenue dans le vector, false sinon.
  */
-bool chercherSiContient( const vector<int>& v , int val ) { //
+bool chercherSiContient(const vector<int> &v, int val) { //
     auto first = v.begin();
     auto last = v.end();
 
-    while( first != last ) {
-        auto mid = first + ( last - first ) / 2;
-        if(*mid == val) {
+    while (first != last) {
+        auto mid = first + (last - first) / 2;
+        if (*mid == val) {
             return true;
-        } else if(*mid < val) {
-            first = mid+1;
+        } else if (*mid < val) {
+            first = mid + 1;
         } else {
             last = mid;
         }
@@ -88,11 +88,11 @@ bool chercherSiContient( const vector<int>& v , int val ) { //
  * @param n
  * @return
  */
-unsigned long long f( unsigned n ) { //n+1 => t*3
+unsigned long long f(unsigned n) { //n+1 => t*3
 
-    if( n == 0 ) return 1;
+    if (n == 0) return 1;
 
-    return f(n-1) + f(n-1) + f(n-1);
+    return f(n - 1) + f(n - 1) + f(n - 1);
 }
 
 /**
@@ -100,9 +100,9 @@ unsigned long long f( unsigned n ) { //n+1 => t*3
  *
  * @param v
  */
-void g( vector<int>& v ) { //n
-    for(size_t i = 0; i < v.size(); ++i) {
-        for(size_t j = v.size() - 1; j > 0; j /= 2 ) {
+void g(vector<int> &v) { //n
+    for (size_t i = 0; i < v.size(); ++i) {
+        for (size_t j = v.size() - 1; j > 0; j /= 2) {
             v.at(i) += v.at(j);
         }
     }
@@ -117,11 +117,11 @@ void g( vector<int>& v ) { //n
  * @param maxVal valeur maximale des données
  * @return vector rempli de N valeurs aléatoires.
  */
-vector<int> random( size_t N , int maxVal ) { //n
+vector<int> random(size_t N, int maxVal) { //n
 
     vector<int> v;
-    for(size_t i = 0; i < N; ++i) {
-        v.push_back(1+rand()%maxVal);
+    for (size_t i = 0; i < N; ++i) {
+        v.push_back(1 + rand() % maxVal);
     }
 
     return v;
@@ -136,11 +136,11 @@ vector<int> random( size_t N , int maxVal ) { //n
  * @param maxVal valeur maximale des données
  * @return vector rempli de N valeurs aléatoires.
  */
-vector<int> random2( size_t N , int maxVal ) { //n²
+vector<int> random2(size_t N, int maxVal) { //n²
 
     vector<int> v;
-    for(size_t i = 0; i < N; ++i) {
-        v.insert(v.begin(),1+rand()%maxVal);
+    for (size_t i = 0; i < N; ++i) {
+        v.insert(v.begin(), 1 + rand() % maxVal);
     }
 
     return v;
@@ -148,47 +148,21 @@ vector<int> random2( size_t N , int maxVal ) { //n²
 
 int main() {
     //initialisation du générateur aléatoire
-    srand (time(NULL));
+    srand(time(NULL));
+    high_resolution_clock::time_point t1, t2;
 
-    /*vector<int> v1(1e5,0);
-    generate(v1.begin(),v1.end(),rand);
 
-    int valeur = rand();
+    //========= FONCTION F() =========
 
-    //prendre le moment de départ*/
-    high_resolution_clock::time_point t1 = high_resolution_clock::now();
-
-    //exécuter les opérations à chronométrer ici
-    //chercherSiContient(v1,valeur);
-
-    //prendre le moment d’arrivée
-    high_resolution_clock::time_point t2 = high_resolution_clock::now();
-
-    double temps = duration_cast<nanoseconds>( t2 - t1 ).count();
-
-    /*
-    cout << temps << endl;
-    */
-    //*
-
-    cout << "fonction f :" << endl;
-
-    for(int i = 11; i< 20; ++i){
-
+    cout << "Fonction f() :" << endl;
+    for (int i = 11; i < 20; ++i) {
         cout << "f(" << i << ") : ";
-
         t1 = high_resolution_clock::now();
-
         f(i);
-
         t2 = high_resolution_clock::now();
-
         //calcul du temps, ici en nanosecondes
-        temps = duration_cast<nanoseconds>( t2 - t1 ).count();
-
-        cout << temps << " ns" << endl;
-
-    }//*/
+        cout << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << endl;
+    }
 
     return EXIT_SUCCESS;
 }
