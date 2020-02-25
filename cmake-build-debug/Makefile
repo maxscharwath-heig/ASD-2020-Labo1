@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Users\Maxime Scharwath\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6494.38\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = C:\Users\SU-ANNESOPHIE\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\192.7142.39\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = "C:\Users\Maxime Scharwath\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6494.38\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = C:\Users\SU-ANNESOPHIE\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\192.7142.39\bin\cmake\win\bin\cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "Y:\HEIG\SEMESTRE 2\ASD1\LABOS\LABO 1"
+CMAKE_SOURCE_DIR = C:\Users\SU-ANNESOPHIE\Documents\GitHub\HEIG_ASD1_LABO_1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "Y:\HEIG\SEMESTRE 2\ASD1\LABOS\LABO 1\cmake-build-debug"
+CMAKE_BINARY_DIR = C:\Users\SU-ANNESOPHIE\Documents\GitHub\HEIG_ASD1_LABO_1\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = "Y:\HEIG\SEMESTRE 2\ASD1\LABOS\LABO 1\cmake-build-debug"
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Users\Maxime Scharwath\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6494.38\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	C:\Users\SU-ANNESOPHIE\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\192.7142.39\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Users\Maxime Scharwath\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6494.38\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	C:\Users\SU-ANNESOPHIE\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\192.7142.39\bin\cmake\win\bin\cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "Y:\HEIG\SEMESTRE 2\ASD1\LABOS\LABO 1\cmake-build-debug\CMakeFiles" "Y:\HEIG\SEMESTRE 2\ASD1\LABOS\LABO 1\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\SU-ANNESOPHIE\Documents\GitHub\HEIG_ASD1_LABO_1\cmake-build-debug\CMakeFiles C:\Users\SU-ANNESOPHIE\Documents\GitHub\HEIG_ASD1_LABO_1\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "Y:\HEIG\SEMESTRE 2\ASD1\LABOS\LABO 1\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\SU-ANNESOPHIE\Documents\GitHub\HEIG_ASD1_LABO_1\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,32 +122,32 @@ LABO_1/fast:
 	$(MAKE) -f CMakeFiles\LABO_1.dir\build.make CMakeFiles/LABO_1.dir/build
 .PHONY : LABO_1/fast
 
-main.obj: main.cpp.obj
+Labo1.obj: Labo1.cpp.obj
 
-.PHONY : main.obj
+.PHONY : Labo1.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\LABO_1.dir\build.make CMakeFiles/LABO_1.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+Labo1.cpp.obj:
+	$(MAKE) -f CMakeFiles\LABO_1.dir\build.make CMakeFiles/LABO_1.dir/Labo1.cpp.obj
+.PHONY : Labo1.cpp.obj
 
-main.i: main.cpp.i
+Labo1.i: Labo1.cpp.i
 
-.PHONY : main.i
+.PHONY : Labo1.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\LABO_1.dir\build.make CMakeFiles/LABO_1.dir/main.cpp.i
-.PHONY : main.cpp.i
+Labo1.cpp.i:
+	$(MAKE) -f CMakeFiles\LABO_1.dir\build.make CMakeFiles/LABO_1.dir/Labo1.cpp.i
+.PHONY : Labo1.cpp.i
 
-main.s: main.cpp.s
+Labo1.s: Labo1.cpp.s
 
-.PHONY : main.s
+.PHONY : Labo1.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\LABO_1.dir\build.make CMakeFiles/LABO_1.dir/main.cpp.s
-.PHONY : main.cpp.s
+Labo1.cpp.s:
+	$(MAKE) -f CMakeFiles\LABO_1.dir\build.make CMakeFiles/LABO_1.dir/Labo1.cpp.s
+.PHONY : Labo1.cpp.s
 
 # Help Target
 help:
@@ -158,9 +158,9 @@ help:
 	@echo ... LABO_1
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... Labo1.obj
+	@echo ... Labo1.i
+	@echo ... Labo1.s
 .PHONY : help
 
 

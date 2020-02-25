@@ -1,13 +1,18 @@
 //
 //  Labo1.cpp
 //
-//	Anne Sophie Ganguillet, Julien Bard, Maxime Scharwath
+//	/* NOMS DES ETUDIANTS ICI */
 //
 
 #include <stdlib.h>
 #include <vector>
 #include <random>
 #include <ctime>
+#include <chrono>
+#include <iostream>
+#include <algorithm>
+
+using namespace std::chrono;
 
 using namespace std;
 
@@ -60,7 +65,7 @@ void trier( vector<int>& v ) {
  * @param val valeur à chercher
  * Retourne true si la valeur est contenue dans le vector, false sinon.
  */
-bool chercherSiContient( const vector<int>& v , int val ) {
+bool chercherSiContient( const vector<int>& v , int val ) { //
     auto first = v.begin();
     auto last = v.end();
 
@@ -83,7 +88,7 @@ bool chercherSiContient( const vector<int>& v , int val ) {
  * @param n
  * @return
  */
-unsigned long long f( unsigned n ) {
+unsigned long long f( unsigned n ) { //n+1 => t*3
 
     if( n == 0 ) return 1;
 
@@ -95,7 +100,7 @@ unsigned long long f( unsigned n ) {
  *
  * @param v
  */
-void g( vector<int>& v ) {
+void g( vector<int>& v ) { //n
     for(size_t i = 0; i < v.size(); ++i) {
         for(size_t j = v.size() - 1; j > 0; j /= 2 ) {
             v.at(i) += v.at(j);
@@ -112,7 +117,7 @@ void g( vector<int>& v ) {
  * @param maxVal valeur maximale des données
  * @return vector rempli de N valeurs aléatoires.
  */
-vector<int> random( size_t N , int maxVal ) {
+vector<int> random( size_t N , int maxVal ) { //n
 
     vector<int> v;
     for(size_t i = 0; i < N; ++i) {
@@ -131,7 +136,7 @@ vector<int> random( size_t N , int maxVal ) {
  * @param maxVal valeur maximale des données
  * @return vector rempli de N valeurs aléatoires.
  */
-vector<int> random2( size_t N , int maxVal ) {
+vector<int> random2( size_t N , int maxVal ) { //n²
 
     vector<int> v;
     for(size_t i = 0; i < N; ++i) {
@@ -145,8 +150,37 @@ int main() {
     //initialisation du générateur aléatoire
     srand (time(NULL));
 
+    vector<int> v1(1e5,0);
+    generate(v1.begin(),v1.end(),rand);
 
+    int valeur = rand();
 
+    //prendre le moment de départ
+    high_resolution_clock::time_point t1 = high_resolution_clock::now();
+
+    //exécuter les opérations à chronométrer ici
+    chercherSiContient(v1,valeur);
+
+    //prendre le moment d’arrivée
+    high_resolution_clock::time_point t2 = high_resolution_clock::now();
+
+    double temps = duration_cast<nanoseconds>( t2 - t1 ).count();
+
+    cout << temps << endl;
+
+    /*
+    for(int i = 11; i< 20; ++i){
+        t1 = high_resolution_clock::now();
+
+        f(i);
+
+        t2 = high_resolution_clock::now();
+
+        //calcul du temps, ici en nanosecondes
+        double temps = duration_cast<nanoseconds>( t2 - t1 ).count();
+
+        cout << i << ':' << temps << endl;
+    }*/
 
     return EXIT_SUCCESS;
 }

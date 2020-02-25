@@ -1,6 +1,6 @@
-"C:\Users\Maxime Scharwath\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6494.38\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/MinGW/bin/mingw32-make.exe -DCMAKE_C_COMPILER=C:/MinGW/bin/gcc.exe -DCMAKE_CXX_COMPILER=C:/MinGW/bin/g++.exe -G "CodeBlocks - MinGW Makefiles" "Y:\HEIG\SEMESTRE 2\ASD1\LABOS\LABO 1"
--- The C compiler identification is GNU 6.3.0
--- The CXX compiler identification is GNU 6.3.0
+C:\Users\SU-ANNESOPHIE\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\192.7142.39\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/MinGW/bin/mingw32-make.exe -DCMAKE_C_COMPILER=C:/MinGW/bin/gcc.exe -DCMAKE_CXX_COMPILER=C:/MinGW/bin/g++.exe -G "CodeBlocks - MinGW Makefiles" C:\Users\SU-ANNESOPHIE\Documents\GitHub\HEIG_ASD1_LABO_1
+-- The C compiler identification is GNU 4.9.3
+-- The CXX compiler identification is GNU 4.9.3
 -- Check for working C compiler: C:/MinGW/bin/gcc.exe
 -- Check for working C compiler: C:/MinGW/bin/gcc.exe -- works
 -- Detecting C compiler ABI info
@@ -15,4 +15,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: Y:/HEIG/SEMESTRE 2/ASD1/LABOS/LABO 1/cmake-build-debug
+-- Build files have been written to: C:/Users/SU-ANNESOPHIE/Documents/GitHub/HEIG_ASD1_LABO_1/cmake-build-debug
