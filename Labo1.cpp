@@ -101,9 +101,9 @@ unsigned long long f(unsigned n) { //n+1 => t*3
  *
  * @param v
  */
-void g(vector<int> &v) { //n
-    for (size_t i = 0; i < v.size(); ++i) {
-        for (size_t j = v.size() - 1; j > 0; j /= 2) {
+void g(vector<int> &v) { //~n
+    for (size_t i = 0; i < v.size(); ++i) {//n
+        for (size_t j = v.size() - 1; j > 0; j /= 2) {//logn
             v.at(i) += v.at(j);
         }
     }
@@ -152,6 +152,19 @@ int main() {
     srand(time(NULL));
     high_resolution_clock::time_point t1, t2;
 
+    //========= FONCTION TRIER() =========
+    cout << "Fonction trier() :" << endl;
+    for (int i = 7; i < 12; ++i) {
+        int j = round(pow(2, i));
+        vector<int> v(j);
+        generate(v.begin(), v.end(), rand);
+        t1 = high_resolution_clock::now();
+        trier(v);
+        t2 = high_resolution_clock::now();
+        //calcul du temps, ici en nanosecondes
+        cout << j << ": " << duration_cast<nanoseconds>(t2 - t1).count() << " ns" <<
+             endl;
+    }
 
     //========= FONCTION f() =========
 
@@ -193,6 +206,8 @@ int main() {
         //calcul du temps, ici en nanosecondes
         cout << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << endl;
     }
+    
+
 
 
     return EXIT_SUCCESS;
