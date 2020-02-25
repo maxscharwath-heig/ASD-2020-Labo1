@@ -11,6 +11,7 @@
 #include <chrono>
 #include <iostream>
 #include <algorithm>
+#include <iomanip>
 
 using namespace std::chrono;
 
@@ -152,10 +153,10 @@ int main() {
     high_resolution_clock::time_point t1, t2;
 
 
-    //========= FONCTION F() =========
+    //========= FONCTION f() =========
 
     cout << "Fonction f() :" << endl;
-    for (int i = 11; i < 20; ++i) {
+    for (int i = 11; i < 19; ++i) {
         cout << "f(" << i << ") : ";
         t1 = high_resolution_clock::now();
         f(i);
@@ -163,6 +164,36 @@ int main() {
         //calcul du temps, ici en nanosecondes
         cout << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << endl;
     }
+
+    //========= FONCTION g() =========
+
+    cout << "Fonction g() :" << endl;
+    for (int i = 4; i < 8; ++i) {
+        int taille = round(pow(10,i));
+        vector<int> v(taille);
+        cout << "g(v), vecteur de taille " << taille << " : ";
+        t1 = high_resolution_clock::now();
+        g(v);
+        t2 = high_resolution_clock::now();
+        //calcul du temps, ici en nanosecondes
+        cout << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << endl;
+    }
+
+    //========= FONCTION random() =========
+
+    cout << "Fonction random() :" << endl;
+    for (int i = 4; i < 8; ++i) {
+
+        int n = round(pow(10,i));
+        int v_max = rand();
+        cout << "random(" << n << ") : ";
+        t1 = high_resolution_clock::now();
+        random(n, v_max);
+        t2 = high_resolution_clock::now();
+        //calcul du temps, ici en nanosecondes
+        cout << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << endl;
+    }
+
 
     return EXIT_SUCCESS;
 }
