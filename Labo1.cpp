@@ -153,6 +153,35 @@ int main() {
     srand(time(NULL));
     high_resolution_clock::time_point t1, t2;
 
+    //========= FONCTION chercherPosition() =========
+
+    cout << "Fonction chercherPosition() :" << endl;
+
+    vector<size_t> tailles {10, 100, 1000, 10000};
+
+    size_t tailleMax = *max_element(tailles.begin(), tailles.end());
+    vector<int> v(tailleMax);
+    auto begin = v.begin();
+    generate(begin, v.end(), rand);
+
+    vector<vector<int>> valeurs(tailles.size());
+    for (size_t i = 0; i < tailles.size(); ++i) {
+        valeurs[i] = vector(begin, begin + tailles[i]);
+    }
+
+    int valeurAChercher;
+    if (rand() % 2) {
+        auto taille_min = min_element(tailles.begin(), tailles.end());
+        auto valeursMin = valeurs.begin() + (taille_min - tailles.begin());
+        valeurAChercher = (*valeursMin)[valeurAChercher];
+    } else {
+        valeurAChercher = rand();
+    }
+
+    for (int i = 0; i < tailles.size(); ++i) {
+        cout << "chercherPosition(" << tailles[i] << ") : " << chercherPosition(valeurs[i], valeurAChercher) << endl;
+    }
+
     //========= FONCTION F() =========
 
     cout << "Fonction f() :" << endl;
