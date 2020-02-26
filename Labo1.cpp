@@ -172,8 +172,9 @@ int main() {
 
     int valeurAChercher;
     if (rand() % 2) {
-        auto taille_min = min_element(tailles.begin(), tailles.end());
-        auto valeursMin = valeurs.begin() + (taille_min - tailles.begin());
+        auto begin = tailles.begin();
+        auto taille_min = min_element(begin, tailles.end());
+        auto valeursMin = valeurs.begin() + (taille_min - begin);
         valeurAChercher = (*valeursMin)[valeurAChercher];
     } else {
         valeurAChercher = rand();
@@ -181,6 +182,8 @@ int main() {
 
     for (int i = 0; i < tailles.size(); ++i) {
         cout << "chercherPosition(" << tailles[i] << ") : " << chercherPosition(valeurs[i], valeurAChercher) << endl;
+    }
+
     //========= FONCTION TRIER() =========
     cout << "Fonction trier() :" << endl;
     for (int i = 7; i < 12; ++i) {
