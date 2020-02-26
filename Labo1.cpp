@@ -11,6 +11,7 @@
 #include <chrono>
 #include <iostream>
 #include <algorithm>
+#include <iomanip>
 
 using namespace std::chrono;
 
@@ -102,9 +103,9 @@ unsigned long long f(unsigned n) { //n+1 => t*3
  *
  * @param v
  */
-void g(vector<int> &v) { //n
-    for (size_t i = 0; i < v.size(); ++i) {
-        for (size_t j = v.size() - 1; j > 0; j /= 2) {
+void g(vector<int> &v) { //~n
+    for (size_t i = 0; i < v.size(); ++i) {//n
+        for (size_t j = v.size() - 1; j > 0; j /= 2) {//logn
             v.at(i) += v.at(j);
         }
     }
@@ -180,12 +181,24 @@ int main() {
 
     for (int i = 0; i < tailles.size(); ++i) {
         cout << "chercherPosition(" << tailles[i] << ") : " << chercherPosition(valeurs[i], valeurAChercher) << endl;
+    //========= FONCTION TRIER() =========
+    cout << "Fonction trier() :" << endl;
+    for (int i = 7; i < 12; ++i) {
+        int j = round(pow(2, i));
+        vector<int> v(j);
+        generate(v.begin(), v.end(), rand);
+        t1 = high_resolution_clock::now();
+        trier(v);
+        t2 = high_resolution_clock::now();
+        //calcul du temps, ici en nanosecondes
+        cout << j << ": " << duration_cast<nanoseconds>(t2 - t1).count() << " ns" <<
+             endl;
     }
 
-    //========= FONCTION F() =========
+    //========= FONCTION f() =========
 
     cout << "Fonction f() :" << endl;
-    for (int i = 11; i < 20; ++i) {
+    for (int i = 11; i < 19; ++i) {
         cout << "f(" << i << ") : ";
         t1 = high_resolution_clock::now();
         f(i);
@@ -193,6 +206,51 @@ int main() {
         //calcul du temps, ici en nanosecondes
         cout << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << endl;
     }
+
+    //========= FONCTION g() =========
+
+    cout << "Fonction g() :" << endl;
+    for (int i = 4; i < 8; ++i) {
+        int taille = round(pow(10,i));
+        vector<int> v(taille);
+        cout << "g(v), vecteur de taille " << taille << " : ";
+        t1 = high_resolution_clock::now();
+        g(v);
+        t2 = high_resolution_clock::now();
+        //calcul du temps, ici en nanosecondes
+        cout << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << endl;
+    }
+
+    //========= FONCTION random() =========
+
+    cout << "Fonction random() :" << endl;
+    for (int i = 4; i < 8; ++i) {
+
+        int n = round(pow(10,i));
+        int v_max = rand();
+        cout << "random(" << n << ") : ";
+        t1 = high_resolution_clock::now();
+        random(n, v_max);
+        t2 = high_resolution_clock::now();
+        //calcul du temps, ici en nanosecondes
+        cout << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << endl;
+    }
+
+    //========= FONCTION random2() =========
+
+    cout << "Fonction random2() :" << endl;
+    for (int i = 2; i < 6; ++i) {
+
+        int n = round(pow(10,i));
+        int v_max = rand();
+        cout << "random2(" << n << ") : ";
+        t1 = high_resolution_clock::now();
+        random2(n, v_max);
+        t2 = high_resolution_clock::now();
+        //calcul du temps, ici en nanosecondes
+        cout << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << endl;
+    }
+
 
     return EXIT_SUCCESS;
 }
