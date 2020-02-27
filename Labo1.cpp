@@ -46,15 +46,24 @@ size_t chercherPosition(const vector<int> &v, int val) {
  * @param v vector à trier
  */
 void trier(vector<int> &v) {
-    if (v.empty()) return;
+    unsigned long long compte = 0;
+
+    if (v.empty()) {
+        cout << compte;
+        return;
+    }
 
     for (int a : v) {
         auto j = v.begin();
         auto k = j++;
-        for (; j != v.end(); k = j++)
+        for (; j != v.end(); k = j++) {
+            ++compte;
             if (*k > *j)
                 swap(*k, *j);
+        }
     }
+
+    cout << compte;
 }
 
 /**
@@ -69,12 +78,15 @@ void trier(vector<int> &v) {
  * Retourne true si la valeur est contenue dans le vector, false sinon.
  */
 bool chercherSiContient(const vector<int> &v, int val) { //
+    unsigned long long compte = 0;
     auto first = v.begin();
     auto last = v.end();
 
     while (first != last) {
+        ++compte;
         auto mid = first + (last - first) / 2;
         if (*mid == val) {
+            cout << compte;
             return true;
         } else if (*mid < val) {
             first = mid + 1;
@@ -82,6 +94,8 @@ bool chercherSiContient(const vector<int> &v, int val) { //
             last = mid;
         }
     }
+
+    cout << compte;
     return false;
 }
 
