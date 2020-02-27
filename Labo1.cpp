@@ -183,6 +183,7 @@ int main() {
     for (size_t i = 0; i < tailles.size(); ++i) {
         vector<int> v(tailles[i]);
         generate(v.begin(), v.end(), rand);
+        valeurs[i] = v;
     }
 
     int valeurAChercher = rand();
