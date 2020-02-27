@@ -174,29 +174,18 @@ int main() {
 
     vector<size_t> tailles {10, 100, 1000, 10000};
 
-    size_t tailleMax = *max_element(tailles.begin(), tailles.end());
-    vector<int> v(tailleMax);
-    auto begin = v.begin();
-    generate(begin, v.end(), rand);
-
     vector<vector<int>> valeurs(tailles.size());
+
     for (size_t i = 0; i < tailles.size(); ++i) {
-        valeurs[i] = vector<int>(begin, begin + tailles[i]);
+        vector<int> v(tailles[i]);
+        generate(v.begin(), v.end(), rand);
     }
 
-    int valeurAChercher;
-    
-    if (rand() % 2) {
-        auto begin = tailles.begin();
-        auto taille_min = min_element(begin, tailles.end());
-        auto valeursMin = valeurs.begin() + (taille_min - begin);
-        valeurAChercher = (*valeursMin)[valeurAChercher];
-    } else {
-        valeurAChercher = rand();
-    }
-
+    int valeurAChercher = rand();
     for (int i = 0; i < tailles.size(); ++i) {
-        cout << "chercherPosition(" << tailles[i] << ") : " << chercherPosition(valeurs[i], valeurAChercher) << endl;
+        cout << "chercherPosition(" << tailles[i] << ") : ";
+        chercherPosition(valeurs[i], valeurAChercher);
+        cout << endl;
     }
 
     //========= FONCTION TRIER() =========
