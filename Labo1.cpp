@@ -199,11 +199,9 @@ int main() {
         int j = round(pow(2, i));
         vector<int> v(j);
         generate(v.begin(), v.end(), rand);
-        t1 = high_resolution_clock::now();
+        cout << "trier(" << i << ") ";
         trier(v);
-        t2 = high_resolution_clock::now();
-        //calcul du temps, ici en nanosecondes
-        cout << j << ": " << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << endl;
+        cout << endl;
     }
 
     //========= FONCTION chercherSiContient() =========
@@ -214,11 +212,9 @@ int main() {
         vector<int> v(j);
         generate(v.begin(), v.end(), rand);
         sort(v.begin(),v.end());
-        t1 = high_resolution_clock::now();
+        cout << "chercherSiContient(" << i << ") : ";
         chercherSiContient(v,val);
-        t2 = high_resolution_clock::now();
-        //calcul du temps, ici en nanosecondes
-        cout << j << ": " << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << endl;
+        cout << endl;
     }
 
 
