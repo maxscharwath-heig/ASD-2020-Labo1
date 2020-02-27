@@ -119,11 +119,14 @@ unsigned long long f(unsigned n) { //n+1 => t*3
  * @param v
  */
 void g(vector<int> &v) { //~n
+    int nb_addition = 0;
     for (size_t i = 0; i < v.size(); ++i) {//n
         for (size_t j = v.size() - 1; j > 0; j /= 2) {//logn
             v.at(i) += v.at(j);
+            ++nb_addition;
         }
     }
+    cout << nb_addition << endl;
 }
 
 /**
@@ -266,7 +269,6 @@ int main() {
         //calcul du temps, ici en nanosecondes
         cout << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << endl;
     }
-
 
     return EXIT_SUCCESS;
 }
