@@ -222,26 +222,19 @@ int main() {
 
     cout << "Fonction f() :" << endl;
     for (int i = 11; i < 19; ++i) {
-        cout << "f(" << i << ") : ";
-        t1 = high_resolution_clock::now();
-        f(i);
-        t2 = high_resolution_clock::now();
-        //calcul du temps, ici en nanosecondes
-        cout << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << endl;
+        cout << "f(" << i << ") = ";
+        cout << f(i) << endl;
     }
 
     //========= FONCTION g() =========
 
     cout << "Fonction g() :" << endl;
+
     for (int i = 4; i < 8; ++i) {
         int taille = round(pow(10,i));
         vector<int> v(taille);
         cout << "g(v), vecteur de taille " << taille << " : ";
-        t1 = high_resolution_clock::now();
         g(v);
-        t2 = high_resolution_clock::now();
-        //calcul du temps, ici en nanosecondes
-        cout << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << endl;
     }
 
     //========= FONCTION random() =========
