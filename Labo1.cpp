@@ -154,7 +154,7 @@ int main() {
     srand(time(NULL));
     high_resolution_clock::time_point t1, t2;
 
-    //========= FONCTION chercherPosition() =========
+ //========= FONCTION chercherPosition() =========
 
     cout << "Fonction chercherPosition() :" << endl;
 
@@ -167,10 +167,11 @@ int main() {
 
     vector<vector<int>> valeurs(tailles.size());
     for (size_t i = 0; i < tailles.size(); ++i) {
-        valeurs[i] = vector(begin, begin + tailles[i]);
+        valeurs[i] = vector<int>(begin, begin + tailles[i]);
     }
 
     int valeurAChercher;
+    
     if (rand() % 2) {
         auto begin = tailles.begin();
         auto taille_min = min_element(begin, tailles.end());
