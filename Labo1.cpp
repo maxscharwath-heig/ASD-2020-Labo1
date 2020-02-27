@@ -45,16 +45,26 @@ size_t chercherPosition(const vector<int> &v, int val) {
  *
  * @param v vector à trier
  */
-void trier(vector<int> &v) { //n^2
-    if (v.empty()) return;
+
+void trier(vector<int> &v) {
+    unsigned long long compte = 0;
+
+    if (v.empty()) {
+        cout << compte;
+        return;
+    }
 
     for (int a : v) {
         auto j = v.begin();
         auto k = j++;
-        for (; j != v.end(); k = j++)
+        for (; j != v.end(); k = j++) {
+            ++compte;
             if (*k > *j)
                 swap(*k, *j);
+        }
     }
+
+    cout << compte;
 }
 
 /**
@@ -69,12 +79,15 @@ void trier(vector<int> &v) { //n^2
  * Retourne true si la valeur est contenue dans le vector, false sinon.
  */
 bool chercherSiContient(const vector<int> &v, int val) { //
+    unsigned long long compte = 0;
     auto first = v.begin();
     auto last = v.end();
 
     while (first != last) {
+        ++compte;
         auto mid = first + (last - first) / 2;
         if (*mid == val) {
+            cout << compte;
             return true;
         } else if (*mid < val) {
             first = mid + 1;
@@ -82,6 +95,8 @@ bool chercherSiContient(const vector<int> &v, int val) { //
             last = mid;
         }
     }
+
+    cout << compte;
     return false;
 }
 
@@ -160,29 +175,18 @@ int main() {
 
     vector<size_t> tailles {10, 100, 1000, 10000};
 
-    size_t tailleMax = *max_element(tailles.begin(), tailles.end());
-    vector<int> v(tailleMax);
-    auto begin = v.begin();
-    generate(begin, v.end(), rand);
-
     vector<vector<int>> valeurs(tailles.size());
+
     for (size_t i = 0; i < tailles.size(); ++i) {
-        valeurs[i] = vector<int>(begin, begin + tailles[i]);
+        vector<int> v(tailles[i]);
+        generate(v.begin(), v.end(), rand);
     }
 
-    int valeurAChercher;
-
-    if (rand() % 2) {
-        auto begin = tailles.begin();
-        auto taille_min = min_element(begin, tailles.end());
-        auto valeursMin = valeurs.begin() + (taille_min - begin);
-        valeurAChercher = (*valeursMin)[valeurAChercher];
-    } else {
-        valeurAChercher = rand();
-    }
-
+    int valeurAChercher = rand();
     for (int i = 0; i < tailles.size(); ++i) {
-        cout << "chercherPosition(" << tailles[i] << ") : " << chercherPosition(valeurs[i], valeurAChercher) << endl;
+        cout << "chercherPosition(" << tailles[i] << ") : ";
+        chercherPosition(valeurs[i], valeurAChercher);
+        cout << endl;
     }
 
     //========= FONCTION TRIER() =========
