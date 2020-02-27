@@ -43,7 +43,7 @@ size_t chercherPosition(const vector<int> &v, int val) {
  *
  * @param v vector à trier
  */
-void trier(vector<int> &v) {
+void trier(vector<int> &v) { //n^2
     if (v.empty()) return;
 
     for (int a : v) {
@@ -162,9 +162,24 @@ int main() {
         trier(v);
         t2 = high_resolution_clock::now();
         //calcul du temps, ici en nanosecondes
-        cout << j << ": " << duration_cast<nanoseconds>(t2 - t1).count() << " ns" <<
-             endl;
+        cout << j << ": " << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << endl;
     }
+
+    //========= FONCTION chercherSiContient() =========
+    cout << "Fonction chercherSiContient() :" << endl;
+    for (int i = 7; i < 12; ++i) {
+        int val = rand();
+        int j = round(pow(2, i));
+        vector<int> v(j);
+        generate(v.begin(), v.end(), rand);
+        sort(v.begin(),v.end());
+        t1 = high_resolution_clock::now();
+        chercherSiContient(v,val);
+        t2 = high_resolution_clock::now();
+        //calcul du temps, ici en nanosecondes
+        cout << j << ": " << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << endl;
+    }
+
 
     //========= FONCTION f() =========
 
@@ -210,9 +225,9 @@ int main() {
     //========= FONCTION random2() =========
 
     cout << "Fonction random2() :" << endl;
-    for (int i = 2; i < 6; ++i) {
+    for (int i = 6; i < 11; ++i) {
 
-        int n = round(pow(10,i));
+        int n = round(pow(3,i));
         int v_max = rand();
         cout << "random2(" << n << ") : ";
         t1 = high_resolution_clock::now();
