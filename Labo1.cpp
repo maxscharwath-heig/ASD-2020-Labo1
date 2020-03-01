@@ -193,6 +193,21 @@ int main() {
         cout << endl;
     }
 
+    //========= FONCTION chercherPosition() =========
+    // v2
+    cout << "Fonction chercherPosition() :" << endl;
+    for (int i = 7; i < 17; ++i) {
+        int taille = round(pow(3,i));
+        vector<int> v = random(taille, taille);
+        cout << "vecteur taille " << taille << " : "; //
+        for(int j = 0; j < 18; ++j) {
+            int valeurAChercher = (rand() % taille);
+            chercherPosition(v, valeurAChercher);
+            cout << "  ";
+        }
+        cout << endl;
+    }
+
     //========= FONCTION TRIER() =========
     cout << "Fonction trier() :" << endl;
     for (int i = 7; i < 12; ++i) {
@@ -208,8 +223,8 @@ int main() {
     cout << "Fonction chercherSiContient() :" << endl;
     for (int i = 7; i < 12; ++i) {
         int val = rand();
-        int j = round(pow(2, i));
-        vector<int> v(j);
+        int taille = round(pow(2, i));
+        vector<int> v(taille);
         generate(v.begin(), v.end(), rand);
         sort(v.begin(),v.end());
         cout << "chercherSiContient(" << i << ") : ";
