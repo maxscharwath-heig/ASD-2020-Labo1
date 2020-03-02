@@ -196,10 +196,10 @@ int main() {
     //========= FONCTION chercherPosition() =========
     // v2
     cout << "Fonction chercherPosition() :" << endl;
-    for (int i = 7; i < 17; ++i) {
+    for (int i = 4; i < 10; ++i) {
         int taille = round(pow(3,i));
         vector<int> v = random(taille, taille);
-        cout << "vecteur taille " << taille << " : "; //
+        cout << "vecteur taille " << taille << " : ";
         for(int j = 0; j < 18; ++j) {
             int valeurAChercher = (rand() % taille);
             chercherPosition(v, valeurAChercher);
