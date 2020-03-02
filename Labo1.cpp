@@ -211,10 +211,10 @@ int main() {
     //========= FONCTION TRIER() =========
     cout << "Fonction trier() :" << endl;
     for (int i = 6; i < 12; ++i) {
-        int j = round(pow(2, i));
-        vector<int> v(j);
+        int taille = round(pow(2, i));
+        vector<int> v(taille);
         generate(v.begin(), v.end(), rand);
-        cout << "trier(" << i << ") ";
+        cout << "trier(" << taille << ") ";
         trier(v);
         cout << endl;
     }
@@ -227,7 +227,7 @@ int main() {
         vector<int> v(taille);
         generate(v.begin(), v.end(), rand);
         sort(v.begin(),v.end());
-        cout << "chercherSiContient(" << i << ") : ";
+        cout << "chercherSiContient(" << taille << ") : ";
         chercherSiContient(v,val);
         cout << endl;
     }
@@ -264,7 +264,6 @@ int main() {
             t1 = high_resolution_clock::now();
             random(n, v_max);
             t2 = high_resolution_clock::now();
-            //calcul du temps, ici en nanosecondes
             cout << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << "   ";
         }
         cout << endl;
@@ -284,7 +283,6 @@ int main() {
             t1 = high_resolution_clock::now();
             random2(n, v_max);
             t2 = high_resolution_clock::now();
-            //calcul du temps, ici en nanosecondes
             cout << duration_cast<nanoseconds>(t2 - t1).count() << " ns" << "  ";
         }
         cout << endl;
