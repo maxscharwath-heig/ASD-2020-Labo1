@@ -210,7 +210,7 @@ int main() {
 
     //========= FONCTION TRIER() =========
     cout << "Fonction trier() :" << endl;
-    for (int i = 7; i < 12; ++i) {
+    for (int i = 6; i < 12; ++i) {
         int j = round(pow(2, i));
         vector<int> v(j);
         generate(v.begin(), v.end(), rand);
@@ -221,7 +221,7 @@ int main() {
 
     //========= FONCTION chercherSiContient() =========
     cout << "Fonction chercherSiContient() :" << endl;
-    for (int i = 7; i < 12; ++i) {
+    for (int i = 6; i < 12; ++i) {
         int val = rand();
         int taille = round(pow(2, i));
         vector<int> v(taille);
@@ -245,8 +245,8 @@ int main() {
 
     cout << "Fonction g() :" << endl;
 
-    for (int i = 4; i < 8; ++i) {
-        int taille = round(pow(10,i));
+    for (int i = 8; i < 14; ++i) {
+        int taille = round(pow(3,i));
         vector<int> v(taille);
         cout << "g(v), vecteur de taille " << taille << " : ";
         g(v);
@@ -255,9 +255,9 @@ int main() {
     //========= FONCTION random() =========
 
     cout << "Fonction random() :" << endl;
-    for (int i = 4; i < 8; ++i) {
+    for (int i = 10; i < 17; ++i) {
 
-        int n = round(pow(10,i));
+        int n = round(pow(3,i));
         int v_max = rand();
         cout << "random(" << n << ") : ";
         for(int j = 0; j<5;++j) {
@@ -272,10 +272,12 @@ int main() {
 
     //========= FONCTION random2() =========
 
-    cout << "Fonction random2() :" << endl;
-    for (int i = 6; i < 11; ++i) {
+    int n = 0;
 
-        int n = round(pow(3,i));
+    cout << "Fonction random2() :" << endl;
+    for (int i = 1; i < 7; ++i) {
+
+        n += 5000*i;
         int v_max = rand();
         cout << "random2(" << n << ") : ";
         for(int j = 0; j<5;++j){
