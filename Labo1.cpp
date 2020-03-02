@@ -1,7 +1,7 @@
 //
 //  Labo1.cpp
 //
-//	/* NOMS DES ETUDIANTS ICI */
+//	Bard, Ganguillet, Scharwath
 //
 
 #include <cstdlib>
@@ -106,7 +106,7 @@ bool chercherSiContient(const vector<int> &v, int val) { //
  * @param n
  * @return
  */
-unsigned long long f(unsigned n) { //n+1 => t*3
+unsigned long long f(unsigned n) { 
 
     if (n == 0) return 1;
 
@@ -118,10 +118,10 @@ unsigned long long f(unsigned n) { //n+1 => t*3
  *
  * @param v
  */
-void g(vector<int> &v) { //~n
+void g(vector<int> &v) { 
     int nb_addition = 0;
-    for (size_t i = 0; i < v.size(); ++i) {//n
-        for (size_t j = v.size() - 1; j > 0; j /= 2) {//logn
+    for (size_t i = 0; i < v.size(); ++i) {
+        for (size_t j = v.size() - 1; j > 0; j /= 2) {
             v.at(i) += v.at(j);
             ++nb_addition;
         }
@@ -138,7 +138,7 @@ void g(vector<int> &v) { //~n
  * @param maxVal valeur maximale des données
  * @return vector rempli de N valeurs aléatoires.
  */
-vector<int> random(size_t N, int maxVal) { //n
+vector<int> random(size_t N, int maxVal) { 
 
     vector<int> v;
     for (size_t i = 0; i < N; ++i) {
@@ -157,7 +157,7 @@ vector<int> random(size_t N, int maxVal) { //n
  * @param maxVal valeur maximale des données
  * @return vector rempli de N valeurs aléatoires.
  */
-vector<int> random2(size_t N, int maxVal) { //n²
+vector<int> random2(size_t N, int maxVal) { 
 
     vector<int> v;
     for (size_t i = 0; i < N; ++i) {
