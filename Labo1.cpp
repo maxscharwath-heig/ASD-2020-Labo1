@@ -175,27 +175,6 @@ int main() {
     //========= FONCTION chercherPosition() =========
 
     cout << "Fonction chercherPosition() :" << endl;
-
-    vector<size_t> tailles {10, 100, 1000, 10000};
-
-    vector<vector<int>> valeurs(tailles.size());
-
-    for (size_t i = 0; i < tailles.size(); ++i) {
-        vector<int> v(tailles[i]);
-        generate(v.begin(), v.end(), rand);
-        valeurs[i] = v;
-    }
-
-    int valeurAChercher = rand();
-    for (int i = 0; i < tailles.size(); ++i) {
-        cout << "chercherPosition(" << tailles[i] << ") : ";
-        chercherPosition(valeurs[i], valeurAChercher);
-        cout << endl;
-    }
-
-    //========= FONCTION chercherPosition() =========
-    // v2
-    cout << "Fonction chercherPosition() :" << endl;
     for (int i = 4; i < 10; ++i) {
         int taille = round(pow(3,i));
         vector<int> v = random(taille, taille);
